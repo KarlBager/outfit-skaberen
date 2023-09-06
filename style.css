@@ -24,7 +24,7 @@ body{
 }
 #start-button{
     position: absolute;
-    bottom: 270px;
+    bottom: 280px;
     font-size: 2em;
     font-family: "anonymous-pro", monospace;
     font-weight: 100;
@@ -40,8 +40,89 @@ body{
     transition: background-color 0.2s;
 }
 .control-container{
-    display: none;
+    /* display: none; */
+    padding: 20px;
     background-color: white;
     width: 100%;
-    border-radius: 40px;
+}
+.control-container-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin: 0 0 auto;
+}
+
+.flex1{border-top-right-radius: 20px; border-bottom-right-radius: 20px;}
+.flex3{border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+
+.control-buttons{
+    box-sizing: border-box;
+    border: white solid 4px;
+    background-color: #EEEEEE;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.control-buttons img{
+    width: 100%;
+}
+
+
+
+.control-buttons:hover{
+    background-color: #BBBBBB;
+    transition: 0.2s;
+}
+
+#shirt-label{grid-column: 1/4; grid-row: 1}
+#shirt-button1{grid-column: 1; grid-row: 2;}
+#shirt-button2{grid-column: 2; grid-row: 2;}
+#shirt-button3{grid-column: 3; grid-row: 2;}
+
+#pants-label{grid-column: 1/4; grid-row: 6}
+#pants-button1{grid-column: 1; grid-row: 7;}
+#pants-button2{grid-column: 2; grid-row: 7;}
+#pants-button3{grid-column: 3; grid-row: 7;}
+
+.control-buttons-label h3{
+    margin: 40px 10px 10px;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+#shirt-r-container{grid-column: 1/4; grid-row: 3}
+#shirt-g-container{grid-column: 1/4; grid-row: 4}
+#shirt-b-container{grid-column: 1/4; grid-row: 5}
+
+#pants-r-container{grid-column: 1/4; grid-row: 8}
+#pants-g-container{grid-column: 1/4; grid-row: 9}
+#pants-b-container{grid-column: 1/4; grid-row: 10}
+
+
+.control-sliders{
+    width: 100%
+}
+
+.control-slider-containers{
+    display: flex;
+    align-items: center;
+}
+
+.slider-color-labels{
+    display: inline;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.slider-color-label-r{
+    background-color: red;
+}
+.slider-color-label-g{
+    background-color: lime;
+}
+.slider-color-label-b{
+    background-color: blue;
 }

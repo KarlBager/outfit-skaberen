@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://use.typekit.net/tlt2jry.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outfitskaberen</title>
@@ -19,8 +19,70 @@
         <div class="game-container">
             
             <div class="game-container control-container flex1">
+
+
+                <div class="control-container-grid">
+                    <div id="shirt-label" class="control-buttons-label">
+                        <h3>Overdel</h3>
+                    </div>
+                    
+                    <div onclick="chooseClothing(1,'shirt')" id="shirt-button1" class="control-buttons">
+                        <img src="assets/clothing-shirt-01-thumb.png" alt="">
+                    </div>
+                    
+                    <div onclick="chooseClothing(2,'shirt')" id="shirt-button2" class="control-buttons">
+                    </div>
+                    
+                    <div onclick="chooseClothing(3,'shirt')" id="shirt-button3" class="control-buttons">
+                    </div>
+
+                    
+                    <div id="shirt-r-container" class="control-slider-containers">
+                        <div class="slider-color-labels slider-color-label-r"></div>
+                        <input class="control-sliders" id="shirt-r" type="range" min="0" max="255" value="128"></input>
+                    </div>
+                    <div id="shirt-g-container" class="control-slider-containers">
+                        <div class="slider-color-labels slider-color-label-g"></div>
+                        <input class="control-sliders" id="shirt-g" type="range" min="0" max="255" value="128"></input>
+                    </div>
+                    <div id="shirt-b-container" class="control-slider-containers">
+                        <div class="slider-color-labels slider-color-label-b"></div>
+                        <input class="control-sliders" id="shirt-b" type="range" min="0" max="255" value="128"></input>
+                    </div>
+
+
+
+                    <div id="pants-label" class="control-buttons-label">
+                        <h3>Underdel</h3>
+                    </div>
+                    
+                    <div onclick="chooseClothing(1,'pants')" id="pants-button1" class="control-buttons">
+                        <img src="assets/clothing-pants-01-thumb.png" alt="">
+                    </div>
+                    
+                    <div onclick="chooseClothing(2,'pants')" id="pants-button2" class="control-buttons">
+                    </div>
+                    
+                    <div onclick="chooseClothing(3,'pants')" id="pants-button3" class="control-buttons">
+                    </div>
+
+                    <div id="pants-r-container" class="control-slider-containers">
+                        <div class="slider-color-labels slider-color-label-r"></div>
+                        <input class="control-sliders" id="pants-r" type="range" min="0" max="255" value="128"></input>
+                    </div>
+                    <div id="pants-g-container" class="control-slider-containers">
+                        <div class="slider-color-labels slider-color-label-g"></div>
+                        <input class="control-sliders" id="pants-g" type="range" min="0" max="255" value="128"></input>
+                    </div>
+                    <div id="pants-b-container" class="control-slider-containers">
+                        <div class="slider-color-labels slider-color-label-b"></div>
+                        <input class="control-sliders" id="pants-b" type="range" min="0" max="255" value="128"></input>
+                    </div>
+
+                </div>
             </div>
             
+
             <div class="game-container flex2">
                 <div id="doll-container">
                     <img class="doll-image" src="assets/doll-no-clothes.png" alt="">
