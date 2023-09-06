@@ -13,23 +13,22 @@ function startGame(){
 }
 
 
-function chooseClothing(choice, type){
-    console.log(choice);
-    console.log(type);
 
-    //Highlight valgte knap og unhighlight den gamle
+
+
+
+
+
+function chooseClothing(choice, type){
+     //Highlight valgte knap og unhighlight den gamle
     for(var i=1; i<4; i++){
         if(choice==i){
             let chosenButtonId = type + "-button" + choice;
-            console.log(chosenButtonId);
             chosenButton = document.getElementById(chosenButtonId);
-            console.log(chosenButton);
             chosenButton.style.backgroundColor = "#BBBBBB";
         } else{
             let unchosenButtonId = type + "-button" + i;
-            console.log(unchosenButtonId);
             unchosenButton = document.getElementById(unchosenButtonId);
-            console.log(unchosenButton);
             unchosenButton.style.backgroundColor = "#EEEEEE";
         }
     }
