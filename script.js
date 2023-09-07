@@ -1,11 +1,46 @@
 
+let testOutfit = {currentShirt: 1, shirtColorHue: 50, currentPants:1, pantsColorHue:-40}
+
+
+let savedOutfits = [];
+let currentOutfit = {currentShirt:0, shirtColorHue:0, currentPants:0, pantsColorHue:0};
+
+
+function renderClothing(){
+    //Pålæg currentOutfit på dukken
+    shirtEl = document.getElementById('doll-shirt');
+    pantsEl = document.getElementById('doll-pants');
+
+    shirtEl.src = "assets/clothing-shirt-0" + currentOutfit.currentShirt + ".png";
+    pantsEl.src = "assets/clothing-pants-0" + currentOutfit.currentPants + ".png";
+
+    //Fjern censur hvis der er bukser på
+    if(currentOutfit.currentPants == [1]){
+        document.getElementById('doll-bottom').src = "assets/doll-no-clothes-bottom.png"
+    } else{
+        document.getElementById('doll-bottom').src = "assets/doll-no-clothes.png"
+    };
+
+    if(currentOutfit.currentShirt == [1]){
+        document.getElementById('doll-arms').style.display = "block";
+    } else{
+        document.getElementById('doll-arms').style.display = "none";
+    };
+
+
+    //Påfør farvevalg
+        shirtEl.style.filter = "hue-rotate(" + currentOutfit.shirtColorHue + "deg)";
+        pantsEl.style.filter = "hue-rotate(" + currentOutfit.pantsColorHue + "deg)";
+
+}
+renderClothing();
+
 
 
 
 
 function startGame(){
     controlContainers = document.getElementsByClassName('control-container');
-    console.log(controlContainers);
     controlContainers[0].style.display = "flex";
     controlContainers[1].style.display = "flex";
     startButton = document.getElementById('start-button');
@@ -17,9 +52,9 @@ function startGame(){
 
 
 
-
-
 function chooseClothing(choice, type){
+    
+
      //Highlight valgte knap og unhighlight den gamle
     for(var i=1; i<4; i++){
         if(choice==i){
@@ -32,4 +67,72 @@ function chooseClothing(choice, type){
             unchosenButton.style.backgroundColor = "#EEEEEE";
         }
     }
+
+    //Opdatér objectet currentOutfit
+    if(type=="shirt"){
+        currentOutfit.currentShirt = choice;
+    }
+    if(type=="pants"){
+        currentOutfit.currentPants = choice;
+    }
+
+
+    renderClothing();
 }
+
+
+
+
+
+shirtColorSlider = document.getElementById('shirt-color-hue');
+pantsColorSlider = document.getElementById('pants-color-hue');
+
+
+function updateColor(){
+    currentOutfit.shirtColorHue = shirtColorSlider.value;
+    currentOutfit.pantsColorHue = pantsColorSlider.value;
+    renderClothing();
+}
+
+shirtColorSlider.addEventListener("input", updateColor);
+pantsColorSlider.addEventListener("input", updateColor);
+
+
+
+
+function saveCurrentOutfit(){
+savedOutfits.push({...currentOutfit});
+console.log(savedOutfits);
+loadSavedOutfits();
+}
+
+
+savedOutfitListEl = document.getElementById('saved-outfit-list');
+
+function loadSavedOutfits(){
+    for(i=0;i<savedOutfits.length;i++){
+        savedOutfitListEl.createElement('div');
+
+
+
+
+
+
+    // console.log(savedOutfits[i])
+    }
+}
+
+loadSavedOutfits();
+
+
+
+/* <div onclick="#" id="1" class="saved-outfit-button">
+                        <div class="thumbnail-doll-containers">
+                            <img id="thumnail-doll-shirt1" class="thumbnail-doll-clothing" src="assets/clothing-shirt-01.png">
+                            <img id="thumbnail-doll-pants1" class="thumbnail-doll-clothing" src="assets/clothing-pants-01.png">
+                            <img id="thumbnail-doll-arms1" class="thumbnail-doll-clothing" src="assets/doll-arms.png" alt="">
+                            <img id="thumbnail-doll-bottom1" class="doll-image" src="assets/doll-no-clothes.png" alt="">
+                        </div>
+                        <p class="saved-outfit-label">Outfit 1</p>
+                        <button id="delete-outfit-button1" class="delete-button">-</button>
+                    </div> */
