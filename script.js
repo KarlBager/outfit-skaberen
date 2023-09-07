@@ -92,7 +92,6 @@ function chooseClothing(choice, type){
 shirtColorSlider = document.getElementById('shirt-color-hue');
 pantsColorSlider = document.getElementById('pants-color-hue');
 
-
 function updateColor(){
     currentOutfit.shirtColorHue = shirtColorSlider.value;
     currentOutfit.pantsColorHue = pantsColorSlider.value;
@@ -221,11 +220,10 @@ loadSavedOutfits();
 
     function deleteOutfit(e){
         outfitNumber = e.srcElement.id.replace(/\D/g, '');
-        savedOutfits.splice(outfitNumber);
+        savedOutfits.splice(outfitNumber,1);
         loadSavedOutfits();
+        console.log(savedOutfits);
     }
-
-
 
 
     allImages = document.getElementsByTagName('img');
