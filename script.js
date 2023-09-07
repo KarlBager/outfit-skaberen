@@ -235,3 +235,5 @@ loadSavedOutfits();
         idToHide = e.srcElement.id;
         document.getElementById(idToHide).style.display = "none";
     }
+
+//commit
