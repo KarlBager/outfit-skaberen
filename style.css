@@ -18,6 +18,14 @@ body{
 #doll-container{
     width: 340px;
 }
+.thumbnail-doll-containers{
+    width: 40px;
+}
+.thumbnail-doll-clothing{
+    display: block;
+    max-width: 40px;
+    position: absolute;
+}
 .doll-image{
     display: block;
     max-width: 100%;
@@ -27,11 +35,13 @@ body{
     max-width: 340px;
     position: absolute;
 }
-
+#doll-arms{
+    dislay:none;
+}
 
 #start-button{
     position: absolute;
-    bottom: 280px;
+    top: 500px;
     font-size: 2em;
     font-family: "anonymous-pro", monospace;
     font-weight: 100;
@@ -42,12 +52,12 @@ body{
     box-shadow: 0px 0px 3px black;
     cursor: pointer;
 }
-#start-button:hover{
+#start-button:hover, #save-outfit-button:hover{
     background-color: #178c29;
     transition: background-color 0.2s;
 }
 .control-container{
-    /* display: none; */
+    display: none;
     padding: 20px;
     background-color: white;
     width: 100%;
@@ -60,27 +70,79 @@ body{
 }
 
 .flex1{border-top-right-radius: 20px; border-bottom-right-radius: 20px;}
-.flex3{border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+.flex3{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px; 
+    flex-direction: column;
+}
 
 .control-buttons{
     box-sizing: border-box;
     border: white solid 4px;
     background-color: #EEEEEE;
     width: 100%;
+    max-width: 150px;
     aspect-ratio: 1/1;
     border-radius: 20px;
     cursor: pointer;
+    margin: 0 auto;
 }
 .control-buttons img{
     width: 100%;
 }
 
-
-
-.control-buttons:hover{
+.control-buttons:hover, .saved-outfit-button:hover{
     background-color: #BBBBBB;
     transition: 0.2s;
 }
+
+
+.saved-outfit-button{
+    grid-column: 1/3;
+    box-sizing: border-box;
+    border: white solid 4px;
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.delete-button{
+grid-column: 3;
+text-align: center;
+font-family: "anonymous-pro", monospace;
+font-weight: 100;
+border-radius: 20%;
+width: 30px;
+padding: 5px;
+margin: auto;
+background-color: darkred;
+color: white;
+box-shadow: 0px 0px 3px black;
+cursor: pointer;
+}
+
+.delete-button.hover{
+    background-color: #BBBBBB;
+    transition: 0.2s;
+}
+
+
+#save-outfit-button{
+    font-family: "anonymous-pro", monospace;
+    font-weight: 100;
+    padding: 2px;
+    border-radius: 20%;
+    background-color: #21c339;
+    color: white;
+    box-shadow: 0px 0px 3px black;
+    cursor: pointer;
+}
+
 
 #shirt-label{grid-column: 1/4; grid-row: 1}
 #shirt-button1{grid-column: 1; grid-row: 2;}
@@ -98,13 +160,9 @@ body{
     font-weight: 500;
 }
 
-#shirt-r-container{grid-column: 1/4; grid-row: 3}
-#shirt-g-container{grid-column: 1/4; grid-row: 4}
-#shirt-b-container{grid-column: 1/4; grid-row: 5}
+#shirt-hue-container{grid-column: 1/4; grid-row: 3}
+#pants-hue-container{grid-column: 1/4; grid-row: 8}
 
-#pants-r-container{grid-column: 1/4; grid-row: 8}
-#pants-g-container{grid-column: 1/4; grid-row: 9}
-#pants-b-container{grid-column: 1/4; grid-row: 10}
 
 
 .control-sliders{
@@ -122,14 +180,5 @@ body{
     height: 15px;
     vertical-align: middle;
     border-radius: 4px;
-}
-
-.slider-color-label-r{
-    background-color: red;
-}
-.slider-color-label-g{
-    background-color: lime;
-}
-.slider-color-label-b{
-    background-color: blue;
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);;
 }
