@@ -18,7 +18,7 @@ function renderClothing(){
     pantsEl.style.display = "block";
 
     //Fjern censur hvis der er bukser på
-    if(currentOutfit.currentPants == [1]){
+    if(currentOutfit.currentPants == [1] || currentOutfit.currentPants == [2]){
         document.getElementById('doll-bottom').src = "assets/doll-no-clothes-bottom.png"
     } else{
         document.getElementById('doll-bottom').src = "assets/doll-no-clothes.png"
